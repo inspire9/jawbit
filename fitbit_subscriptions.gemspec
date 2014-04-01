@@ -12,7 +12,7 @@ them on via ActiveSupport::Notifications.
   spec.homepage      = 'https://github.com/inspire9/fitbit_subscriptions'
   spec.license       = 'MIT'
 
-  spec.files         = `git ls-files -z`.split('\x0')
+  spec.files         = `git ls-files`.split("\n")
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
