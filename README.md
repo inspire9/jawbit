@@ -21,7 +21,7 @@ post '/fitbit/subscriptions', to: FitbitSubscriptions::Rack.new(
 # in an initialiser:
 ActiveSupport::Notifications.subscribe('notification.fitbit') do |*args|
   event = ActiveSupport::Notifications::Event.new *args
-  # use event.payload[:json]
+  # use event.payload[:json] however you like.
 end
 ```
 
