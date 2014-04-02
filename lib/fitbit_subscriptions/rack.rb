@@ -1,4 +1,6 @@
 class FitbitSubscriptions::Rack
+  delegate :instrument, to: ActiveSupport::Notifications
+
   def initialize(subscriber_id, consumer_secret)
     @subscriber_id, @consumer_secret = subscriber_id, consumer_secret
   end
@@ -6,10 +8,18 @@ class FitbitSubscriptions::Rack
   def call(env)
     request = Rack::Request.new env
 
+    instrument 'notification.fitbit', json: json(request)
+
     [204, {}, ['']]
   end
 
   private
 
   attr_reader :subscriber_id, :consumer_secret
+
+  def json(request)
+    MultiJson.load request.body.read
+  rescue MultiJson::ParseError
+    []
+  end
 end

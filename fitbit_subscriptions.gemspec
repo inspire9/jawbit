@@ -16,6 +16,8 @@ them on via ActiveSupport::Notifications.
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
+  spec.add_runtime_dependency 'activesupport', '>= 3.1.0'
+  spec.add_runtime_dependency 'multi_json',    '>= 1.3.0'
   spec.add_runtime_dependency 'rack'
 
   spec.add_development_dependency 'rack-test', '~> 0.6.2'
