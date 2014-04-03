@@ -7,3 +7,4 @@ module Jawbit
 end
 
 require 'jawbit/fitbit_rack'
+require 'jawbit/jawbone_rack'

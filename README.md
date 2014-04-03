@@ -1,6 +1,6 @@
 # Jawbit
 
-For receiving Fitbit subscription requests in a Rails (or Rack) app.
+For receiving Fitbit and/or Jawbone subscription requests in a Rails (or Rack) app.
 
 ## Installation
 
@@ -17,9 +17,15 @@ gem 'jawbit', '0.0.2'
 post '/fitbit/subscriptions', to: Jawbit::FitbitRack.new(
   subscriber_id, consumer_secret
 )
+post '/jawbone/subscriptions', to: Jawbit::JawboneRack.new
 
 # in an initialiser:
 ActiveSupport::Notifications.subscribe('notification.fitbit') do |*args|
+  event = ActiveSupport::Notifications::Event.new *args
+  # use event.payload[:json] however you like.
+end
+
+ActiveSupport::Notifications.subscribe('notification.jawbone') do |*args|
   event = ActiveSupport::Notifications::Event.new *args
   # use event.payload[:json] however you like.
 end
@@ -35,4 +41,4 @@ end
 
 ## Licence
 
-Copyright (c) 2014, Fitbit Subscriptions is developed and maintained by [Inspire9](http://development.inspire9.com), and is released under the open MIT Licence.
+Copyright (c) 2014, Jawbit is developed and maintained by [Inspire9](http://development.inspire9.com), and is released under the open MIT Licence.
