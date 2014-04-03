@@ -7,7 +7,7 @@ For receiving Fitbit and/or Jawbone subscription requests in a Rails (or Rack) a
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'jawbit', '0.0.2'
+gem 'jawbit', '0.0.3'
 ```
 
 ## Usage
