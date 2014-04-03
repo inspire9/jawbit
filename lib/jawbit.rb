@@ -2,8 +2,8 @@ require 'active_support/notifications'
 require 'active_support/core_ext/module/delegation'
 require 'multi_json'
 
-module FitbitSubscriptions
+module Jawbit
   #
 end
 
-require 'fitbit_subscriptions/rack'
+require 'jawbit/rack'
