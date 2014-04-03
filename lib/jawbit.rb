@@ -6,4 +6,4 @@ module Jawbit
   #
 end
 
-require 'jawbit/rack'
+require 'jawbit/fitbit_rack'

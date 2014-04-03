@@ -1,4 +1,4 @@
-class Jawbit::Rack
+class Jawbit::FitbitRack
   delegate :instrument, to: ActiveSupport::Notifications
 
   def initialize(subscriber_id, consumer_secret)

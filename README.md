@@ -14,7 +14,7 @@ gem 'jawbit', '0.0.1'
 
 ```ruby
 # in config/routes.rb
-post '/fitbit/subscriptions', to: Jawbit::Rack.new(
+post '/fitbit/subscriptions', to: Jawbit::FitbitRack.new(
   subscriber_id, consumer_secret
 )
 

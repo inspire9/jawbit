@@ -4,7 +4,7 @@ describe 'Fitbit Subscriptions' do
   include Rack::Test::Methods
 
   let(:app)             {
-    Jawbit::Rack.new subscription_id, consumer_secret
+    Jawbit::FitbitRack.new subscription_id, consumer_secret
   }
   let(:subscription_id) { 'sub' }
   let(:consumer_secret) { '12345678901234567890123456789012' }
