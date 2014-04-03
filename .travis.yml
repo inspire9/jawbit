@@ -6,6 +6,6 @@ rvm:
   - 2.1.1
 notifications:
   slack:
-    secure: "jHdpTKZw0/7FAmBH6y5uRjFiY9cxRMbWN2F8pQcffmiCncBK59PZC8ppF5tGLV/NEX4knZPkU4gw2e6/IfFsP6cznj6SpzaQAgHJko2e7+I1P0AGNkizzVbWK4ix55YP59v+/9cBa5ldargD2/qUdqpdAv1EVzU2GslNWooq6qQ="
+    secure: "aN7wc3+0EvwROw91z1OQK6zowdmRJESDWb541Q0PfmzMcQULAFtQKcJJ3UH/WlDle8aMVKfy3iqwZOJbDSLuPW7PXiHhiFlsSCOzQjxPDPYyeOooGBxEzfay5bWFxrYMUISRSi29mH6LEDEN2qYGHJaZbgjyNNzDrxsLJhS3clg="
   on_success: change
   on_failure: change
