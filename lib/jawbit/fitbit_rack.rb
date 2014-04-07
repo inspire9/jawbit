@@ -18,7 +18,7 @@ class Jawbit::FitbitRack
   attr_reader :subscriber_id, :consumer_secret
 
   def json(request)
-    MultiJson.load request.body.read
+    MultiJson.load request.params['updates']
   rescue MultiJson::ParseError
     []
   end
