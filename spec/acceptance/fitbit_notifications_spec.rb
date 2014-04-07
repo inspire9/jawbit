@@ -16,6 +16,14 @@ describe 'Fitbit Subscriptions' do
     )
   end
 
+  def multipart_update(string)
+    tempfile = Tempfile.new 'updates'
+    tempfile.write string
+    tempfile.rewind
+
+    Rack::Test::UploadedFile.new(tempfile.path, 'application/json')
+  end
+
   after :each do
     subscriptions.each do |subscription|
       ActiveSupport::Notifications.unsubscribe(subscription)
@@ -23,7 +31,7 @@ describe 'Fitbit Subscriptions' do
   end
 
   it 'returns a 204' do
-    post '/', updates: '[]'
+    post '/', updates: multipart_update('[]')
 
     expect(last_response.status).to eq(204)
   end
@@ -32,7 +40,7 @@ describe 'Fitbit Subscriptions' do
     notification = false
     subscribe { |*args| notification = true }
 
-    post '/', updates: '[]'
+    post '/', updates: multipart_update('[]')
 
     expect(notification).to eq(true)
   end
@@ -43,6 +51,6 @@ describe 'Fitbit Subscriptions' do
       expect(event.payload[:json]).to eq([{'foo' => 'bar'}])
     }
 
-    post '/', updates: '[{"foo":"bar"}]'
+    post '/', updates: multipart_update('[{"foo":"bar"}]')
   end
 end
