@@ -23,7 +23,7 @@ describe 'Fitbit Subscriptions' do
   end
 
   it 'returns a 204' do
-    post '/'
+    post '/', updates: '[]'
 
     expect(last_response.status).to eq(204)
   end
@@ -32,7 +32,7 @@ describe 'Fitbit Subscriptions' do
     notification = false
     subscribe { |*args| notification = true }
 
-    post '/'
+    post '/', updates: '[]'
 
     expect(notification).to eq(true)
   end

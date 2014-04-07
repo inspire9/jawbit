@@ -19,7 +19,5 @@ class Jawbit::FitbitRack
 
   def json(request)
     MultiJson.load request.params['updates']
-  rescue MultiJson::ParseError
-    []
   end
 end

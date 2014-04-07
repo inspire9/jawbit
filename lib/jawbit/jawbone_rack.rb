@@ -13,7 +13,5 @@ class Jawbit::JawboneRack
 
   def json(request)
     MultiJson.load request.body.read
-  rescue MultiJson::ParseError
-    []
   end
 end

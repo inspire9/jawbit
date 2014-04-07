@@ -19,7 +19,7 @@ describe 'Jawbone Subscriptions' do
   end
 
   it 'returns a 200' do
-    post '/'
+    post '/', '[]'
 
     expect(last_response.status).to eq(200)
   end
@@ -28,7 +28,7 @@ describe 'Jawbone Subscriptions' do
     notification = false
     subscribe { |*args| notification = true }
 
-    post '/'
+    post '/', '[]'
 
     expect(notification).to eq(true)
   end
