@@ -43,6 +43,6 @@ describe 'Fitbit Subscriptions' do
       expect(event.payload[:json]).to eq([{'foo' => 'bar'}])
     }
 
-    post '/', '[{"foo":"bar"}]'
+    post '/', updates: '[{"foo":"bar"}]'
   end
 end
