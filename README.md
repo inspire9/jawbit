@@ -1,6 +1,6 @@
 # Jawbit
 
-For receiving Fitbit and/or Jawbone subscription requests in a Rails (or Rack) app.
+For receiving Fitbit, Jawbone and/or Validic subscription requests in a Rails (or Rack) app.
 
 ## Installation
 
@@ -18,6 +18,7 @@ post '/fitbit/subscriptions', to: Jawbit::FitbitRack.new(
   subscriber_id, consumer_secret
 )
 post '/jawbone/subscriptions', to: Jawbit::JawboneRack.new
+post '/validic/subscriptions', to: Jawbit::ValidicRack.new
 
 # in an initialiser:
 ActiveSupport::Notifications.subscribe('notification.fitbit') do |*args|
@@ -26,6 +27,11 @@ ActiveSupport::Notifications.subscribe('notification.fitbit') do |*args|
 end
 
 ActiveSupport::Notifications.subscribe('notification.jawbone') do |*args|
+  event = ActiveSupport::Notifications::Event.new *args
+  # use event.payload[:json] however you like.
+end
+
+ActiveSupport::Notifications.subscribe('notification.validic') do |*args|
   event = ActiveSupport::Notifications::Event.new *args
   # use event.payload[:json] however you like.
 end
