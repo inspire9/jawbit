@@ -8,3 +8,4 @@ end
 
 require 'jawbit/fitbit_rack'
 require 'jawbit/jawbone_rack'
+require 'jawbit/validic_rack'
