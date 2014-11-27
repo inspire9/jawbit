@@ -1,7 +1,7 @@
 # coding: utf-8
 Gem::Specification.new do |spec|
   spec.name          = 'jawbit'
-  spec.version       = '0.0.3'
+  spec.version       = '0.1.0'
   spec.authors       = ['Pat Allan']
   spec.email         = ['pat@freelancing-gods.com']
   spec.summary       = %q{Captures Fitbit and Jawbone subscription notifications.}
